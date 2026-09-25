@@ -62,17 +62,6 @@ function escribirURL() {
   history.replaceState(null, "", location.pathname + (s ? "?" + s : "") + location.hash);
 }
 
-function renderStats() {
-  const paises = new Set(ENTRADAS.map((e) => e.pais).filter((p) => p !== "regional"));
-  const regulacion = ENTRADAS.filter((e) => e.categoria === "regulacion").length;
-  const ultima = entradasOrdenadas[0];
-  $("#stats").innerHTML = `
-    <div class="stat"><b>${ENTRADAS.length}</b><span>entradas en el archivo</span></div>
-    <div class="stat"><b>${paises.size}</b><span>países con registros</span></div>
-    <div class="stat"><b>${regulacion}</b><span>hitos regulatorios</span></div>
-    <div class="stat"><b class="mono" style="font-size:1rem;padding-top:.7rem">${ultima ? formatearFecha(ultima.fecha) : "—"}</b><span>entrada más reciente</span></div>`;
-}
-
 function renderFiltros() {
   const usados = new Set(ENTRADAS.map((e) => e.pais));
   const opciones = Object.entries(PAISES)
@@ -155,7 +144,6 @@ function actualizar() {
 
 function iniciarNoticias() {
   leerURL();
-  renderStats();
   renderFiltros();
   actualizar();
   if (location.hash) document.getElementById(location.hash.slice(1))?.scrollIntoView();
