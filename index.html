@@ -4,91 +4,95 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Superinteligencia Latam</title>
-  <meta name="description" content="Archivo abierto, versionado como un repositorio, de la inteligencia artificial y su regulación en América Latina.">
+  <meta name="description" content="Qué tan cerca está cada país de América Latina de la singularidad: leyes, estrategias e infraestructura de inteligencia artificial, con su fuente oficial.">
   <meta property="og:title" content="Superinteligencia Latam">
-  <meta property="og:description" content="git log de la IA y su regulación en América Latina.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230d1117'/><circle cx='11' cy='9' r='3' fill='%233fb950'/><circle cx='11' cy='23' r='3' fill='%233fb950'/><circle cx='22' cy='14' r='3' fill='%23f78166'/><path d='M11 12v8M11 18c0-3 11-1 11-4' stroke='%233fb950' stroke-width='2' fill='none'/></svg>">
+  <meta property="og:description" content="El camino de cada país de América Latina hacia la singularidad, noticia a noticia.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230d1117'/><path d='M5 16h17' stroke='%2330363d' stroke-width='2'/><circle cx='7' cy='16' r='3' fill='%233fb950'/><circle cx='15' cy='16' r='3' fill='%233fb950'/><circle cx='25' cy='16' r='4' fill='none' stroke='%23e3b341' stroke-width='2'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="barra">
-    <div class="barra-izq">
-      <span class="luces" aria-hidden="true"><i></i><i></i><i></i></span>
-      <a href="./" class="repo"><span class="dim">superinteligencia-latam</span> <span class="sep">/</span> <b id="rama-actual">main</b></a>
-    </div>
+    <a href="./" class="marca">Superinteligencia <span>Latam</span></a>
     <nav class="barra-der">
-      <a href="#readme" id="ver-readme">README.md</a>
-      <button class="fetch" id="fetch" type="button">
-        <span class="fetch-icono" aria-hidden="true">⟳</span> fetch noticias
-      </button>
+      <a href="#como-funciona" id="ver-como">Cómo funciona</a>
+      <button class="actualizar" id="actualizar" type="button" aria-label="Buscar novedades"><span aria-hidden="true">↻</span><span class="txt"> Buscar novedades</span></button>
     </nav>
   </header>
 
-  <div class="layout">
-    <aside class="lateral" aria-label="Ramas">
-      <section>
-        <h2 class="rotulo">ramas</h2>
-        <ul class="ramas" id="ramas"></ul>
-      </section>
-      <section>
-        <h2 class="rotulo">historial de fetch</h2>
-        <ul class="fetches" id="fetches"></ul>
-      </section>
-    </aside>
+  <main class="wrap">
+    <section class="portada">
+      <h1>¿Qué tan cerca está cada país de la <em>singularidad</em>?</h1>
+      <p>Seguimos el camino de América Latina hacia una inteligencia artificial cada vez más capaz. Cada punto es un hecho verificado, con su fuente oficial.</p>
+    </section>
 
-    <main class="principal">
-      <div class="prompt">
-        <label for="buscar"><span class="ps1">~/latam</span> <span class="dim">$</span> git log --grep=</label>
-        <input id="buscar" type="search" spellcheck="false" autocomplete="off" placeholder="&quot;buscar…&quot;">
+    <section class="camino" aria-labelledby="t-camino">
+      <div class="camino-cab">
+        <h2 id="t-camino">El camino, país por país</h2>
+        <p class="dim">Seis etapas que un país recorre para prepararse. Toca un punto para ver la noticia que lo respalda.</p>
       </div>
+      <div class="pista" id="pista"></div>
+      <p class="deslizar dim">Desliza para ver todas las etapas →</p>
+    </section>
 
-      <section class="info-rama" id="info-rama" hidden></section>
-      <p class="resultado" id="resultado" aria-live="polite"></p>
-      <ol class="log" id="log"></ol>
-
-      <article class="readme" id="readme" hidden>
-        <div class="readme-cab"><span>README.md</span><button type="button" class="cerrar" id="cerrar-readme" aria-label="Cerrar">×</button></div>
-        <div class="readme-cuerpo">
-          <h1># Superinteligencia Latam</h1>
-          <p>Archivo abierto de los desarrollos de la inteligencia artificial en América Latina y el Caribe, con énfasis en su <b>regulación</b>: leyes, proyectos, estrategias nacionales, fallos, acuerdos regionales y los hitos de industria e investigación que les dan contexto.</p>
-          <h2>## Cómo funciona</h2>
-          <ul>
-            <li>Cada <b>país es una rama</b> y cada hecho es un <b>nodo</b> (un commit) con su fecha y su fuente primaria.</li>
-            <li>El archivo no se actualiza solo. Al pulsar <code>⟳ fetch noticias</code> se investiga cada país y los hallazgos nuevos entran como un <b>merge</b> encima de los nodos existentes.</li>
-            <li>Si nadie pulsa el botón, el archivo queda exactamente como está.</li>
-          </ul>
-          <h2>## Criterios</h2>
-          <ul>
-            <li>Solo hechos con fecha, no opiniones.</li>
-            <li>Cada nodo enlaza al documento o comunicado oficial concreto.</li>
-            <li>Todo cambio queda en el historial público de <a href="https://github.com/superinteligencialatam/superinteligencialatam/commits/main/data/archivo.json" target="_blank" rel="noopener">GitHub</a>.</li>
-          </ul>
-          <h2>## Contribuir</h2>
-          <p><a href="https://github.com/superinteligencialatam/superinteligencialatam/issues/new?title=Propuesta%20de%20noticia&labels=propuesta" target="_blank" rel="noopener">Propón un nodo</a> con su fuente, o edita <code>data/archivo.json</code> en un pull request.</p>
+    <section class="noticias" aria-labelledby="t-noticias">
+      <div class="noticias-cab">
+        <h2 id="t-noticias">Línea de tiempo</h2>
+        <div class="filtros">
+          <input id="buscar" type="search" placeholder="Buscar noticias…" autocomplete="off" aria-label="Buscar noticias">
+          <button type="button" class="quitar-filtro" id="quitar-filtro" hidden></button>
         </div>
-      </article>
-    </main>
-  </div>
+      </div>
+      <div class="info-pais" id="info-pais" hidden></div>
+      <p class="resultado" id="resultado" aria-live="polite"></p>
+      <ol class="lista" id="lista"></ol>
+    </section>
 
-  <dialog class="dialogo" id="dialogo-fetch">
+    <section class="seguir-banda" aria-label="Seguir el proyecto">
+      <div>
+        <b>No te pierdas el próximo paso.</b>
+        <span class="dim">Te avisamos cuando un país avance en el camino.</span>
+      </div>
+      <div class="seguir-lista" id="seguir"></div>
+    </section>
+
+    <article class="como" id="como-funciona" hidden>
+      <div class="como-cab"><h2>Cómo funciona</h2><button type="button" class="cerrar" id="cerrar-como" aria-label="Cerrar">×</button></div>
+      <p>La <b>singularidad</b> es el momento, todavía hipotético, en que la inteligencia artificial supere a la humana. No es una fecha que se pueda medir, pero sí podemos medir qué tan preparado está cada país para ese horizonte.</p>
+      <p>Por eso seguimos seis etapas concretas. Un país avanza cuando hay un hecho verificable (una ley, una estrategia, una inversión) con su documento oficial:</p>
+      <ol class="etapas-lista" id="etapas-lista"></ol>
+      <p>Las etapas no tienen que cumplirse en orden: un país puede invertir en cómputo antes de tener una ley. La distancia a la singularidad es cuántas etapas le faltan todavía.</p>
+      <p><b>Cómo se actualiza.</b> El archivo no cambia solo. Cuando alguien del equipo pulsa <i>Buscar novedades</i>, se investigan todos los países y los hechos nuevos se agregan con su fuente. Si nadie lo pulsa, todo queda igual.</p>
+      <p><b>¿Falta algo?</b> <a href="https://github.com/superinteligencialatam/superinteligencialatam/issues/new?title=Propuesta%20de%20noticia&labels=propuesta" target="_blank" rel="noopener">Propón una noticia</a> con su fuente.</p>
+    </article>
+  </main>
+
+  <footer class="pie wrap">
+    <span id="ultima"></span>
+    <a href="https://github.com/superinteligencialatam/superinteligencialatam" target="_blank" rel="noopener">Código abierto</a>
+  </footer>
+
+  <dialog class="dialogo" id="dialogo-actualizar">
     <form method="dialog">
-      <div class="dialogo-cab">$ git fetch noticias --all</div>
+      <div class="dialogo-cab">Buscar novedades</div>
       <div class="dialogo-cuerpo">
-        <p>Esto lanza una investigación en <b id="n-paises"></b> ramas:</p>
-        <p class="dialogo-ramas" id="lista-paises"></p>
-        <p class="dim">Los hallazgos nuevos se agregan como un merge encima del grafo. Solo quien administra el repositorio puede ejecutarlo; tarda unos minutos y el sitio se actualiza al terminar.</p>
-        <p class="dim" id="ultimo-fetch"></p>
+        <p>Esto investiga las noticias más recientes de <b id="n-paises"></b> países y agrega los hechos nuevos al camino.</p>
+        <p class="dim">Solo el equipo del proyecto puede ejecutarlo. Tarda unos minutos y la página se actualiza al terminar.</p>
+        <p class="dim" id="ultima-dialogo"></p>
       </div>
       <div class="dialogo-pie">
-        <button value="cancelar" class="btn">cancelar</button>
-        <a class="btn btn-primario" href="https://github.com/superinteligencialatam/superinteligencialatam/actions/workflows/actualizar.yml" target="_blank" rel="noopener">Run workflow ↗</a>
+        <button value="cancelar" class="btn btn-texto">Cancelar</button>
+        <a class="btn btn-primario" href="https://github.com/superinteligencialatam/superinteligencialatam/actions/workflows/actualizar.yml" target="_blank" rel="noopener">Continuar en GitHub ↗</a>
       </div>
     </form>
   </dialog>
 
+  <dialog class="dialogo intro" id="intro" aria-label="Bienvenida"></dialog>
+  <aside class="aviso" id="aviso" role="status" hidden></aside>
+
   <script src="script.js"></script>
+  <script src="bienvenida.js"></script>
 </body>
 </html>

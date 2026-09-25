@@ -1,6 +1,6 @@
 # Actualización bajo demanda: se ejecuta solo al pulsar "Run workflow"
-# (el botón "fetch" del sitio lleva aquí). Nunca corre de forma programada.
-name: fetch noticias
+# (el botón "Buscar novedades" del sitio lleva aquí). Nunca corre de forma programada.
+name: Buscar novedades
 
 on:
   workflow_dispatch:
@@ -31,7 +31,7 @@ jobs:
 
       - run: npm ci
 
-      - name: Investigar y agregar nodos
+      - name: Investigar y agregar noticias
         run: node scripts/actualizar.mjs
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}

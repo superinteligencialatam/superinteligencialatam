@@ -2,9 +2,9 @@
  * SUPERINTELIGENCIA LATAM — Actualización bajo demanda
  *
  * Investiga cada país del archivo con Claude + búsqueda web y agrega los
- * hallazgos nuevos a data/archivo.json como una nueva "actualización"
- * (un merge en el grafo del sitio). No se ejecuta solo: lo lanza el botón
- * "fetch" del sitio a través del workflow de GitHub Actions.
+ * hallazgos nuevos a data/archivo.json como una nueva "actualización", cada
+ * uno asignado a una etapa del camino a la singularidad. No se ejecuta solo:
+ * lo lanza el botón "Buscar novedades" a través del workflow de GitHub Actions.
  *
  *   ANTHROPIC_API_KEY=... node scripts/actualizar.mjs            # todos los países
  *   PAISES=br,cl ANTHROPIC_API_KEY=... node scripts/actualizar.mjs
@@ -48,6 +48,10 @@ function promptInvestigacion(codigo, archivo) {
     .join("\n") || "(ninguna)";
   const estado = archivo.estado_paises[codigo];
   const ultima = archivo.actualizaciones.at(-1).fecha.slice(0, 10);
+  const conEvidencia = new Set(archivo.entradas.filter((e) => e.pais === codigo && e.etapa).map((e) => e.etapa));
+  const etapas = archivo.etapas
+    .map((e) => `- ${e.nombre}: ${e.descripcion}${conEvidencia.has(e.id) ? " (ya registrada)" : " (SIN evidencia en el archivo)"}`)
+    .join("\n");
   const alcance = codigo === "regional"
     ? "Ámbito: América Latina y el Caribe en conjunto (organismos regionales y multilaterales como CEPAL, UNESCO, OEA, CAF, BID, cumbres ministeriales, proyectos regionales como Latam-GPT). No incluyas hechos de un solo país."
     : `País: ${pais.nombre}.`;
@@ -59,9 +63,13 @@ ${estado ? `Estado regulatorio registrado: ${estado.resumen}\n` : ""}
 Entradas que ya están en el archivo (no las repitas):
 ${existentes}
 
+El archivo mide el avance hacia la singularidad con estas etapas:
+${etapas}
+
 Tarea:
 1. Busca desarrollos nuevos desde el ${ultima}.
-2. Busca también hitos importantes desde 2023 que falten en el archivo.
+2. Para cada etapa SIN evidencia, busca si ${codigo === "regional" ? "la región" : "el país"} ya la cumplió (sin importar la fecha) y reporta el hecho que lo demuestra.
+3. Busca también otros hitos importantes desde 2023 que falten en el archivo.
 Reporta como máximo ${MAX_POR_PAIS} hallazgos, los más relevantes primero. Para cada uno indica fecha exacta (o mes si no hay día), qué pasó, por qué importa y la URL concreta de la fuente. Al final, di en una línea si el estado regulatorio registrado sigue siendo correcto o cómo cambió.`;
 }
 
@@ -119,6 +127,8 @@ function esquemaHallazgos(archivo) {
     entradas: z.array(z.object({
       fecha: z.string().describe("AAAA-MM-DD, o AAAA-MM si solo se conoce el mes"),
       categoria: z.enum(Object.keys(archivo.categorias)),
+      etapa: z.enum([...archivo.etapas.map((e) => e.id), "ninguna"])
+        .describe("La etapa del camino que este hecho demuestra, o 'ninguna' si no demuestra ninguna"),
       titulo: z.string().describe("Titular corto en español, estilo periodístico"),
       resumen: z.string().describe("Uno o dos párrafos en español, separados por una línea en blanco"),
       fuentes: z.array(z.object({ nombre: z.string(), url: z.string() })),
@@ -137,7 +147,10 @@ async function extraer(codigo, archivo, informe) {
   const respuesta = await client.messages.parse({
     model: MODELO,
     max_tokens: 16000,
-    system: "Conviertes informes de investigación en entradas del archivo Superinteligencia Latam. Usa solo información presente en el informe; no inventes fechas ni URLs. Omite hallazgos sin URL concreta o que repitan entradas ya registradas.",
+    system: `Conviertes informes de investigación en entradas del archivo Superinteligencia Latam. Usa solo información presente en el informe; no inventes fechas ni URLs. Omite hallazgos sin URL concreta o que repitan entradas ya registradas.
+
+Etapas del camino (asigna una solo si el hecho la demuestra claramente; un anuncio o un borrador no cuenta como ley aprobada):
+${archivo.etapas.map((e) => `- ${e.id}: ${e.descripcion}`).join("\n")}`,
     messages: [{
       role: "user",
       content: `Ámbito: ${archivo.paises[codigo].nombre} (${codigo}).
@@ -199,8 +212,9 @@ export function fusionar(archivo, codigo, hallazgos, vistas, idActualizacion) {
     ids.add(id);
     fuentes.forEach((f) => urlsExistentes.add(normalizarURL(f.url)));
 
+    const etapa = codigo !== "regional" && h.etapa !== "ninguna" ? h.etapa : null;
     const entrada = { id, fecha: h.fecha, pais: codigo, categoria: h.categoria, titulo: h.titulo,
-      resumen: h.resumen, fuentes, etiquetas: h.etiquetas, actualizacion: idActualizacion };
+      resumen: h.resumen, fuentes, etiquetas: h.etiquetas, etapa, actualizacion: idActualizacion };
     archivo.entradas.push(entrada);
     nuevas.push(entrada);
   }
@@ -247,14 +261,15 @@ async function main() {
     if (r.error) continue;
     const nuevas = fusionar(archivo, r.codigo, r.hallazgos, r.vistas, idActualizacion);
     if (nuevas.length) nuevasPorPais[r.codigo] = nuevas;
-    console.log(`${nuevas.length ? "+" : "·"} ${r.codigo}: ${nuevas.length} nodos nuevos`);
+    console.log(`${nuevas.length ? "+" : "·"} ${r.codigo}: ${nuevas.length} noticias nuevas`);
   }
 
   const total = Object.values(nuevasPorPais).flat().length;
   const fallidos = resultados.filter((r) => r.error).map((r) => r.codigo);
+  const nombres = Object.keys(nuevasPorPais).map((c) => archivo.paises[c].nombre).join(", ");
   const mensaje = total
-    ? `fetch: +${total} nodos (${Object.keys(nuevasPorPais).join(", ")})`
-    : "fetch: sin novedades";
+    ? `${total} ${total === 1 ? "noticia nueva" : "noticias nuevas"} (${nombres})`
+    : "Sin novedades";
 
   if (total) {
     archivo.actualizaciones.push({ id: idActualizacion, fecha, mensaje, paises: Object.keys(nuevasPorPais) });
@@ -270,4 +285,4 @@ async function main() {
   if (fallidos.length === codigos.length) process.exit(1);
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1]).href) main();
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) main();
