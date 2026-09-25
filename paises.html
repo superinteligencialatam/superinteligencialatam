@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Superinteligencia Latam</title>
+  <title>Países · Superinteligencia Latam</title>
   <meta name="description" content="Archivo abierto de los desarrollos de la inteligencia artificial y su regulación en América Latina.">
   <meta property="og:title" content="Superinteligencia Latam">
   <meta property="og:description" content="Archivo abierto de la IA y su regulación en América Latina.">
@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body data-page="noticias">
+<body data-page="paises">
   <header class="masthead">
     <div class="wrap">
       <div class="masthead-top">
@@ -34,16 +34,12 @@
   </header>
 
   <main class="wrap">
-    <section class="stats" id="stats" aria-label="Resumen del archivo"></section>
-
-    <section class="filtros" aria-label="Filtros">
-      <input type="search" id="buscar" placeholder="Buscar en el archivo…" aria-label="Buscar">
-      <select id="filtro-pais" aria-label="País"></select>
-      <div class="chips" id="filtro-categoria" role="group" aria-label="Categoría"></div>
+    <section class="page-intro">
+      <h1>Estado por país</h1>
+      <p>Dónde está cada país en la regulación de la inteligencia artificial. Haz clic en un país para ver su historial en el archivo.</p>
+      <div class="leyenda mono" id="leyenda"></div>
     </section>
-
-    <p class="resultado mono" id="resultado" aria-live="polite"></p>
-    <section id="feed" class="feed"></section>
+    <section id="paises" class="paises"></section>
   </main>
 
   <footer class="footer">
