@@ -244,12 +244,6 @@ function mostrarComo(visible) {
   if (visible) $("#como-funciona").scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-function abrirActualizar() {
-  $("#n-paises").textContent = Object.keys(A.paises).length;
-  $("#ultima-dialogo").textContent = `Última búsqueda: ${formatearFecha(A.actualizaciones.at(-1).fecha, true)}.`;
-  $("#dialogo-actualizar").showModal();
-}
-
 function irALista() {
   $("#t-noticias").scrollIntoView({ behavior: "smooth", block: "start" });
 }
@@ -294,7 +288,6 @@ function eventos() {
 
   $("#ver-como").addEventListener("click", (ev) => { ev.preventDefault(); mostrarComo(true); });
   $("#cerrar-como").addEventListener("click", () => mostrarComo(false));
-  $("#actualizar").addEventListener("click", abrirActualizar);
 }
 
 async function iniciar() {

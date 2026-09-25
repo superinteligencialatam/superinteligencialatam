@@ -67,15 +67,15 @@ button { font: inherit; color: inherit; }
 .marca span { color: var(--oro); }
 .marca:hover { text-decoration: none; }
 .barra-der { display: flex; align-items: center; gap: 18px; }
-.barra-der > a { color: var(--dim); font-size: 14px; }
-.barra-der > a:hover { color: var(--texto); text-decoration: none; }
+.barra-der > a:not(.proponer) { color: var(--dim); font-size: 14px; }
+.barra-der > a:not(.proponer):hover { color: var(--texto); text-decoration: none; }
 
-.actualizar {
-  display: inline-flex; align-items: center; gap: 6px; cursor: pointer;
+.proponer {
+  display: inline-flex; align-items: center; white-space: nowrap;
   background: var(--panel); color: var(--texto); border: 1px solid var(--borde); border-radius: 8px;
-  padding: 7px 14px; font-weight: 500; font-size: 14px; white-space: nowrap;
+  padding: 7px 14px; font-weight: 500; font-size: 14px;
 }
-.actualizar:hover { border-color: var(--dim); }
+.proponer:hover { border-color: var(--dim); text-decoration: none; }
 
 /* ---------- Portada ---------- */
 
@@ -306,13 +306,13 @@ h2 { font-size: 19px; letter-spacing: -0.01em; }
 
 @media (max-width: 760px) {
   .barra { padding: 0 16px; }
-  .barra-der > a { display: none; }
+  .barra-der > a:not(.proponer) { display: none; }
   .wrap { padding: 0 16px; }
   .portada { padding: 32px 0 24px; }
   .camino { padding: 16px 12px 8px; }
   .fila-camino { grid-template-columns: 104px minmax(0, 1fr) 48px; gap: 8px; }
   .etq-etapa { width: 64px; font-size: 10.5px; }
-  .actualizar .txt { display: none; }
+  .proponer { padding: 6px 10px; font-size: 13px; }
   .deslizar { display: block; }
   .pais-nombre { position: sticky; left: 0; z-index: 1; background: var(--panel); font-size: 13px; }
   .noticia-cab { grid-template-columns: 1fr auto; gap: 2px 10px; }

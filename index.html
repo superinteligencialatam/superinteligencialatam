@@ -18,7 +18,7 @@
     <a href="./" class="marca">Superinteligencia <span>Latam</span></a>
     <nav class="barra-der">
       <a href="#como-funciona" id="ver-como">Cómo funciona</a>
-      <button class="actualizar" id="actualizar" type="button" aria-label="Buscar novedades"><span aria-hidden="true">↻</span><span class="txt"> Buscar novedades</span></button>
+      <a class="proponer" href="mailto:binocuindiesoftware@gmail.com?subject=Propuesta%20de%20noticia">Proponer una noticia</a>
     </nav>
   </header>
 
@@ -64,8 +64,8 @@
       <p>Por eso seguimos seis etapas concretas. Un país avanza cuando hay un hecho verificable (una ley, una estrategia, una inversión) con su documento oficial:</p>
       <ol class="etapas-lista" id="etapas-lista"></ol>
       <p>Las etapas no tienen que cumplirse en orden: un país puede invertir en cómputo antes de tener una ley. La distancia a la singularidad es cuántas etapas le faltan todavía.</p>
-      <p><b>Cómo se actualiza.</b> El archivo no cambia solo. Cuando alguien del equipo pulsa <i>Buscar novedades</i>, se investigan todos los países y los hechos nuevos se agregan con su fuente. Si nadie lo pulsa, todo queda igual.</p>
-      <p><b>¿Falta algo?</b> <a href="https://github.com/superinteligencialatam/superinteligencialatam/issues/new?title=Propuesta%20de%20noticia&labels=propuesta" target="_blank" rel="noopener">Propón una noticia</a> con su fuente.</p>
+      <p><b>Cómo se actualiza.</b> El archivo no cambia solo. El equipo revisa periódicamente las novedades de cada país, verifica cada hecho contra su fuente oficial y lo agrega al camino.</p>
+      <p><b>¿Falta algo?</b> <a href="mailto:binocuindiesoftware@gmail.com?subject=Propuesta%20de%20noticia">Escríbenos</a> con la noticia y su fuente, y la revisamos.</p>
     </article>
   </main>
 
@@ -74,20 +74,6 @@
     <a href="https://github.com/superinteligencialatam/superinteligencialatam" target="_blank" rel="noopener">Código abierto</a>
   </footer>
 
-  <dialog class="dialogo" id="dialogo-actualizar">
-    <form method="dialog">
-      <div class="dialogo-cab">Buscar novedades</div>
-      <div class="dialogo-cuerpo">
-        <p>Esto investiga las noticias más recientes de <b id="n-paises"></b> países y agrega los hechos nuevos al camino.</p>
-        <p class="dim">Solo el equipo del proyecto puede ejecutarlo. Tarda unos minutos y la página se actualiza al terminar.</p>
-        <p class="dim" id="ultima-dialogo"></p>
-      </div>
-      <div class="dialogo-pie">
-        <button value="cancelar" class="btn btn-texto">Cancelar</button>
-        <a class="btn btn-primario" href="https://github.com/superinteligencialatam/superinteligencialatam/actions/workflows/actualizar.yml" target="_blank" rel="noopener">Continuar en GitHub ↗</a>
-      </div>
-    </form>
-  </dialog>
 
   <dialog class="dialogo intro" id="intro" aria-label="Bienvenida"></dialog>
   <aside class="aviso" id="aviso" role="status" hidden></aside>
