@@ -1,0 +1,51 @@
+# Actualización bajo demanda: se ejecuta solo al pulsar "Run workflow"
+# (el botón "fetch" del sitio lleva aquí). Nunca corre de forma programada.
+name: fetch noticias
+
+on:
+  workflow_dispatch:
+    inputs:
+      paises:
+        description: "Códigos de país separados por coma (vacío = todos). Ej: br,cl,mx"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-noticias
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Investigar y agregar nodos
+        run: node scripts/actualizar.mjs
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          PAISES: ${{ inputs.paises }}
+          MENSAJE_COMMIT: ${{ runner.temp }}/mensaje.txt
+
+      - name: Commit
+        run: |
+          if git diff --quiet -- data/archivo.json; then
+            echo "Sin novedades; no hay nada que commitear."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/archivo.json
+          git commit -F "$RUNNER_TEMP/mensaje.txt"
+          git push

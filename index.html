@@ -4,54 +4,91 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Superinteligencia Latam</title>
-  <meta name="description" content="Archivo abierto de los desarrollos de la inteligencia artificial y su regulación en América Latina.">
+  <meta name="description" content="Archivo abierto, versionado como un repositorio, de la inteligencia artificial y su regulación en América Latina.">
   <meta property="og:title" content="Superinteligencia Latam">
-  <meta property="og:description" content="Archivo abierto de la IA y su regulación en América Latina.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23111'/><text x='16' y='22' font-size='16' text-anchor='middle' fill='%23ff5a1f' font-family='monospace'>S∞</text></svg>">
+  <meta property="og:description" content="git log de la IA y su regulación en América Latina.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230d1117'/><circle cx='11' cy='9' r='3' fill='%233fb950'/><circle cx='11' cy='23' r='3' fill='%233fb950'/><circle cx='22' cy='14' r='3' fill='%23f78166'/><path d='M11 12v8M11 18c0-3 11-1 11-4' stroke='%233fb950' stroke-width='2' fill='none'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body data-page="noticias">
-  <header class="masthead">
-    <div class="wrap">
-      <div class="masthead-top">
-        <span class="mono" id="hoy"></span>
-        <span class="mono">Archivo abierto · edición continua</span>
-      </div>
-      <a href="index.html" class="logo">Superinteligencia <em>Latam</em></a>
-      <p class="tagline">Inteligencia artificial y su regulación en América Latina.</p>
+<body>
+  <header class="barra">
+    <div class="barra-izq">
+      <span class="luces" aria-hidden="true"><i></i><i></i><i></i></span>
+      <a href="./" class="repo"><span class="dim">superinteligencia-latam</span> <span class="sep">/</span> <b id="rama-actual">main</b></a>
     </div>
-    <nav class="nav">
-      <div class="wrap nav-inner">
-        <a href="index.html" data-nav="noticias">Noticias</a>
-        <a href="paises.html" data-nav="paises">Países</a>
-        <a href="acerca.html" data-nav="acerca">Acerca</a>
-        <a class="nav-cta" href="https://github.com/superinteligencialatam/superinteligencialatam/issues/new?title=Propuesta%20de%20noticia&labels=propuesta" target="_blank" rel="noopener">+ Proponer noticia</a>
-      </div>
+    <nav class="barra-der">
+      <a href="#readme" id="ver-readme">README.md</a>
+      <button class="fetch" id="fetch" type="button">
+        <span class="fetch-icono" aria-hidden="true">⟳</span> fetch noticias
+      </button>
     </nav>
   </header>
 
-  <main class="wrap">
-    <section class="filtros" aria-label="Filtros">
-      <input type="search" id="buscar" placeholder="Buscar en el archivo…" aria-label="Buscar">
-      <select id="filtro-pais" aria-label="País"></select>
-      <div class="chips" id="filtro-categoria" role="group" aria-label="Categoría"></div>
-    </section>
+  <div class="layout">
+    <aside class="lateral" aria-label="Ramas">
+      <section>
+        <h2 class="rotulo">ramas</h2>
+        <ul class="ramas" id="ramas"></ul>
+      </section>
+      <section>
+        <h2 class="rotulo">historial de fetch</h2>
+        <ul class="fetches" id="fetches"></ul>
+      </section>
+    </aside>
 
-    <p class="resultado mono" id="resultado" aria-live="polite"></p>
-    <section id="feed" class="feed"></section>
-  </main>
+    <main class="principal">
+      <div class="prompt">
+        <label for="buscar"><span class="ps1">~/latam</span> <span class="dim">$</span> git log --grep=</label>
+        <input id="buscar" type="search" spellcheck="false" autocomplete="off" placeholder="&quot;buscar…&quot;">
+      </div>
 
-  <footer class="footer">
-    <div class="wrap">
-      <p><strong>Superinteligencia Latam</strong> — un archivo abierto para seguir la llegada de la IA avanzada a América Latina.</p>
-      <p class="mono">Contenido bajo licencia abierta · <a href="https://github.com/superinteligencialatam/superinteligencialatam" target="_blank" rel="noopener">Código en GitHub</a></p>
-    </div>
-  </footer>
+      <section class="info-rama" id="info-rama" hidden></section>
+      <p class="resultado" id="resultado" aria-live="polite"></p>
+      <ol class="log" id="log"></ol>
 
-  <script src="data/entradas.js"></script>
+      <article class="readme" id="readme" hidden>
+        <div class="readme-cab"><span>README.md</span><button type="button" class="cerrar" id="cerrar-readme" aria-label="Cerrar">×</button></div>
+        <div class="readme-cuerpo">
+          <h1># Superinteligencia Latam</h1>
+          <p>Archivo abierto de los desarrollos de la inteligencia artificial en América Latina y el Caribe, con énfasis en su <b>regulación</b>: leyes, proyectos, estrategias nacionales, fallos, acuerdos regionales y los hitos de industria e investigación que les dan contexto.</p>
+          <h2>## Cómo funciona</h2>
+          <ul>
+            <li>Cada <b>país es una rama</b> y cada hecho es un <b>nodo</b> (un commit) con su fecha y su fuente primaria.</li>
+            <li>El archivo no se actualiza solo. Al pulsar <code>⟳ fetch noticias</code> se investiga cada país y los hallazgos nuevos entran como un <b>merge</b> encima de los nodos existentes.</li>
+            <li>Si nadie pulsa el botón, el archivo queda exactamente como está.</li>
+          </ul>
+          <h2>## Criterios</h2>
+          <ul>
+            <li>Solo hechos con fecha, no opiniones.</li>
+            <li>Cada nodo enlaza al documento o comunicado oficial concreto.</li>
+            <li>Todo cambio queda en el historial público de <a href="https://github.com/superinteligencialatam/superinteligencialatam/commits/main/data/archivo.json" target="_blank" rel="noopener">GitHub</a>.</li>
+          </ul>
+          <h2>## Contribuir</h2>
+          <p><a href="https://github.com/superinteligencialatam/superinteligencialatam/issues/new?title=Propuesta%20de%20noticia&labels=propuesta" target="_blank" rel="noopener">Propón un nodo</a> con su fuente, o edita <code>data/archivo.json</code> en un pull request.</p>
+        </div>
+      </article>
+    </main>
+  </div>
+
+  <dialog class="dialogo" id="dialogo-fetch">
+    <form method="dialog">
+      <div class="dialogo-cab">$ git fetch noticias --all</div>
+      <div class="dialogo-cuerpo">
+        <p>Esto lanza una investigación en <b id="n-paises"></b> ramas:</p>
+        <p class="dialogo-ramas" id="lista-paises"></p>
+        <p class="dim">Los hallazgos nuevos se agregan como un merge encima del grafo. Solo quien administra el repositorio puede ejecutarlo; tarda unos minutos y el sitio se actualiza al terminar.</p>
+        <p class="dim" id="ultimo-fetch"></p>
+      </div>
+      <div class="dialogo-pie">
+        <button value="cancelar" class="btn">cancelar</button>
+        <a class="btn btn-primario" href="https://github.com/superinteligencialatam/superinteligencialatam/actions/workflows/actualizar.yml" target="_blank" rel="noopener">Run workflow ↗</a>
+      </div>
+    </form>
+  </dialog>
+
   <script src="script.js"></script>
 </body>
 </html>

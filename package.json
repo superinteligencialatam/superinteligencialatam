@@ -1,0 +1,13 @@
+{
+  "name": "superinteligencialatam",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "actualizar": "node scripts/actualizar.mjs",
+    "dev": "python3 -m http.server 8000"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.128.0",
+    "zod": "^4.6.5"
+  }
+}

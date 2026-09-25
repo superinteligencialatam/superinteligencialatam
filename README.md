@@ -1,54 +1,48 @@
 # Superinteligencia Latam
 
-> Archivo abierto de los desarrollos de la inteligencia artificial y su regulación en América Latina.
+> Archivo abierto de la inteligencia artificial y su regulación en América Latina, versionado como un repositorio.
 
-Un sitio tipo periódico para seguir, en orden cronológico y con enlace a la fuente primaria, las leyes, proyectos de ley, estrategias nacionales, acuerdos regionales y avances de industria e investigación en IA en la región.
+Cada **país es una rama** y cada hecho es un **nodo** con su fecha y su fuente primaria. El sitio los dibuja como un `git log --graph`.
+
+El archivo **no se actualiza solo**. Al pulsar **⟳ fetch noticias** se investiga cada país con Claude y búsqueda web, y los hallazgos nuevos entran como un **merge** encima de los nodos existentes. Si nadie pulsa el botón, el archivo queda exactamente como está.
 
 ## Estructura
 
 ```
-index.html        # Noticias: feed cronológico con búsqueda y filtros por país/categoría
-paises.html       # Estado regulatorio por país
-acerca.html       # Sobre el proyecto y cómo contribuir
-data/entradas.js  # ← todo el contenido vive aquí
-script.js         # Renderizado y filtros
-style.css         # Estilos (claro/oscuro automático)
+index.html                     # El grafo: ramas, historial de fetch, README
+script.js                      # Dibuja el grafo desde data/archivo.json
+style.css                      # Estilos (oscuro/claro automático)
+data/archivo.json              # ← todo el contenido: países, estado, fetches y nodos
+scripts/actualizar.mjs         # La investigación que hace el botón
+.github/workflows/actualizar.yml  # Workflow que ejecuta el botón (solo manual)
 ```
 
-Sitio 100% estático, sin dependencias ni paso de compilación. Se publica tal cual en GitHub Pages.
+## Activar el botón "fetch noticias"
 
-## Agregar una noticia
+1. En GitHub: **Settings → Secrets and variables → Actions → New repository secret**, con nombre `ANTHROPIC_API_KEY` y tu clave de la API de Anthropic.
+2. Listo. El botón del sitio abre **Actions → fetch noticias → Run workflow**. Solo quien tenga permiso de escritura en el repositorio puede ejecutarlo.
 
-Edita `data/entradas.js` y añade un objeto al arreglo `ENTRADAS`:
+Al ejecutarlo puedes limitarlo a algunos países (`br,cl,mx`) o dejarlo vacío para investigarlos todos. El workflow hace commit de los nodos nuevos y GitHub Pages vuelve a publicar el sitio.
 
-```js
-{
-  id: "mexico-senado-iniciativa-ia",   // único, se usa en la URL: index.html#mexico-senado-iniciativa-ia
-  fecha: "2026-09-25",                 // o "2026-09" si solo sabes el mes
-  pais: "mx",                          // código de PAISES, o "regional"
-  categoria: "regulacion",             // regulacion | politica | industria | investigacion | infraestructura | sociedad
-  titulo: "…",
-  resumen: "Primer párrafo.\n\nSegundo párrafo.",
-  fuentes: [{ nombre: "Senado de la República", url: "https://…" }],
-  etiquetas: ["congreso"],
-},
-```
+### Qué hace una investigación
 
-El orden no importa: el sitio ordena por fecha. Para actualizar el estado de un país en la página *Países*, edita `ESTADO_PAISES` en el mismo archivo.
+Por cada país (y el ámbito regional):
 
-## Enlaces útiles
+1. Claude busca en la web desarrollos nuevos desde el último fetch, y hitos importantes desde 2023 que falten.
+2. Los hallazgos se convierten en nodos con fecha, categoría, resumen y fuentes.
+3. Se descarta todo nodo cuya fuente no haya salido de la búsqueda real, que repita una fuente o un título ya archivado, o que no tenga una fecha válida.
 
-Los filtros se reflejan en la URL, así que se pueden compartir:
-
-- `index.html?pais=br` — todo lo de Brasil
-- `index.html?cat=regulacion` — solo regulación
-- `index.html#peru-ley-31814` — una entrada concreta
-
-## Ver en local
+## Ejecutar en local
 
 ```bash
-python3 -m http.server 8000
+npm install
+ANTHROPIC_API_KEY=... PAISES=br npm run actualizar   # investigar solo Brasil
+npm run dev                                          # ver el sitio en http://localhost:8000
 ```
+
+## Editar a mano
+
+Los nodos están en `data/archivo.json` → `entradas`. Cada uno pertenece a una `actualizacion` (un fetch) de la lista `actualizaciones`.
 
 ## Licencia
 
