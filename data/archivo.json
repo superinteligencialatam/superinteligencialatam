@@ -113,31 +113,59 @@
   "estado_paises": {
     "br": {
       "nivel": "tramite",
-      "resumen": "PL 2338/2023 aprobado por el Senado (dic. 2024); en discusión en la Cámara de Diputados. Plan Brasileño de IA 2024–2028 en marcha."
+      "resumen": "PL 2338/2023 aprobado por el Senado (dic. 2024); espera el informe del relator en la comisión especial de la Cámara. El Plan Brasileño de IA 2024–2028 sigue en marcha, con el supercomputador Santos Dumont ampliado."
     },
     "cl": {
       "nivel": "tramite",
-      "resumen": "Proyecto de ley de IA basado en riesgos (Boletín 16821-19): aprobado por la Cámara en octubre de 2025, en segundo trámite en el Senado."
+      "resumen": "Proyecto de ley de IA basado en riesgos (Boletín 16821-19): aprobado por la Cámara en octubre de 2025 y en general por la comisión del Senado el 26 de octubre de 2026; falta el voto de la Sala. Política Nacional de IA actualizada en 2025 y Latam-GPT presentado en 2026."
     },
     "co": {
       "nivel": "tramite",
-      "resumen": "Política Nacional de IA (CONPES 4144, 2025). Proyecto de ley del Gobierno radicado en el Congreso en 2025."
+      "resumen": "Política Nacional de IA (CONPES 4144, 2025). El PL 025 de 2026 se tramita en la Comisión Sexta de la Cámara, que en noviembre instaló una comisión accidental para unificar los proyectos de IA."
     },
     "pe": {
       "nivel": "ley",
-      "resumen": "Ley 31814 (2023) que promueve el uso de la IA, con reglamento aprobado en 2025."
+      "resumen": "Ley 31814 (2023) con reglamento (2025). Estrategia Nacional de IA 2026–2030 aprobada en mayo de 2026 y directiva del Oficial de IA en octubre."
     },
     "uy": {
       "nivel": "estrategia",
-      "resumen": "Estrategia Nacional de IA a cargo de AGESIC, con mandato legal desde la Ley 20.212 (2023)."
+      "resumen": "Estrategia Nacional de IA 2024–2030 a cargo de AGESIC, con mandato legal desde la Ley 20.212 (2023); reglamentó los entornos de prueba de IA y datos en diciembre de 2025."
     },
     "mx": {
-      "nivel": "sin-datos",
-      "resumen": "Múltiples iniciativas legislativas presentadas; pendiente de documentar."
+      "nivel": "tramite",
+      "resumen": "Varias iniciativas de ley general en el Congreso; una comisión del Senado impulsó un marco regulatorio en abril de 2026. Ninguna está aprobada."
     },
     "ar": {
+      "nivel": "tramite",
+      "resumen": "Una comisión de Diputados dio dictamen de mayoría (nov. 2025) a un proyecto de marco legal de IA; el oficialismo presentó un dictamen de rechazo."
+    },
+    "bo": {
+      "nivel": "tramite",
+      "resumen": "El Senado aprobó en octubre de 2025 el proyecto de ley de IA, que pasó a la Cámara de Diputados."
+    },
+    "cr": {
+      "nivel": "estrategia",
+      "resumen": "Estrategia Nacional de IA 2024–2027, lanzada en octubre de 2024."
+    },
+    "do": {
+      "nivel": "estrategia",
+      "resumen": "Estrategia Nacional de IA (ENIA) lanzada en octubre de 2023. Fue sede de la Tercera Cumbre regional sobre ética de la IA (junio de 2026)."
+    },
+    "ec": {
       "nivel": "sin-datos",
-      "resumen": "Pendiente de documentar."
+      "resumen": "El Pleno archivó el proyecto de ley de IA en septiembre de 2026; el país no tiene una ley específica."
+    },
+    "pa": {
+      "nivel": "tramite",
+      "resumen": "Estrategia Nacional de IA aprobada por el Gabinete en agosto de 2026; el proyecto de ley 588 de gobernanza adaptativa pasó el primer debate en abril."
+    },
+    "py": {
+      "nivel": "tramite",
+      "resumen": "Un proyecto de ley que regula la IA está en el Senado desde mayo de 2025."
+    },
+    "ve": {
+      "nivel": "tramite",
+      "resumen": "El proyecto de ley de IA fue aprobado en primera discusión en noviembre de 2024; falta la segunda discusión."
     }
   },
   "actualizaciones": [
@@ -152,6 +180,28 @@
         "pe",
         "uy",
         "regional"
+      ]
+    },
+    {
+      "id": "489af80",
+      "fecha": "2026-11-21T02:29:19Z",
+      "mensaje": "22 noticias nuevas (14 países y la región)",
+      "paises": [
+        "pe",
+        "cl",
+        "co",
+        "do",
+        "ve",
+        "cr",
+        "uy",
+        "pa",
+        "ec",
+        "regional",
+        "br",
+        "ar",
+        "bo",
+        "mx",
+        "py"
       ]
     }
   ],
@@ -363,6 +413,476 @@
       ],
       "etapa": null,
       "actualizacion": "init"
+    },
+    {
+      "id": "peru-directiva-oficial-inteligencia-artificial",
+      "fecha": "2026-10-21",
+      "pais": "pe",
+      "categoria": "regulacion",
+      "titulo": "Perú define el perfil y las funciones del Oficial de Inteligencia Artificial en el Estado",
+      "resumen": "La Secretaría de Gobierno y Transformación Digital de la PCM aprobó la Directiva 002-2026-PCM/SGTD, que fija los criterios para que las entidades públicas designen a un Oficial de Inteligencia Artificial y define sus responsabilidades. Entre ellas, formular el plan de acción de IA de su entidad.\n\nLa directiva se enmarca en la Estrategia Nacional de IA 2026–2030. El cumplimiento del perfil será exigible a los 12 meses de su entrada en vigor.",
+      "fuentes": [
+        {
+          "nombre": "PCM — Directiva N.° 002-2026-PCM/SGTD",
+          "url": "https://www.gob.pe/institucion/pcm/normas-legales/8743135-002-2026-pcm-sgtd"
+        },
+        {
+          "nombre": "El Peruano — Resolución que aprueba la directiva",
+          "url": "https://busquedas.elperuano.pe/dispositivo/NL/2566694-1"
+        }
+      ],
+      "etiquetas": [
+        "Oficial de IA",
+        "PCM"
+      ],
+      "etapa": null,
+      "actualizacion": "489af80"
+    },
+    {
+      "id": "chile-senado-comision-aprueba-en-general-proyecto-ia",
+      "fecha": "2026-10-26",
+      "pais": "cl",
+      "categoria": "regulacion",
+      "titulo": "La comisión del Senado de Chile aprueba en general el proyecto de ley de IA",
+      "resumen": "La Comisión de Desafíos del Futuro del Senado aprobó en general el proyecto que regula los sistemas de inteligencia artificial, por unanimidad (cuatro votos a favor). Lo hizo sin que el Ejecutivo hubiera ingresado todavía su indicación sustitutiva.\n\nEl texto pasa ahora a la Sala del Senado, en su segundo trámite. Se propuso el 4 de diciembre de 2026 como plazo para presentar indicaciones, que debía ratificar la Sala.",
+      "fuentes": [
+        {
+          "nombre": "Prensa — Malaespina Check: Ley de IA avanza en el Senado",
+          "url": "https://www.malaespinacheck.cl/pais/2026/10/27/ley-de-ia-avanza-en-el-senado-que-usos-prohibiria-y-como-afectaria-a-colegios-empresas-y-al-estado/"
+        },
+        {
+          "nombre": "Prensa — Diario Financiero: Comisión aprueba en general el proyecto",
+          "url": "https://www.df.cl/df-lab/transformacion-digital/comision-aprueba-en-general-proyecto-que-regula-la-inteligencia-artificial"
+        }
+      ],
+      "etiquetas": [
+        "Senado",
+        "riesgo"
+      ],
+      "etapa": "proyecto",
+      "actualizacion": "489af80"
+    },
+    {
+      "id": "colombia-camara-instala-comision-accidental-ia",
+      "fecha": "2026-11-13",
+      "pais": "co",
+      "categoria": "politica",
+      "titulo": "La Cámara de Colombia instala una comisión accidental de inteligencia artificial",
+      "resumen": "La Cámara de Representantes instaló una comisión accidental de IA, con expertos nacionales e internacionales, para avanzar en la unificación de los proyectos sobre el tema que hay en el Congreso.\n\nLa instalación mostró dos agendas en tensión: congresistas y academia hablaron de soberanía digital, y los gremios pidieron seguridad jurídica.",
+      "fuentes": [
+        {
+          "nombre": "Prensa — Impacto TIC: Cámara instala comisión de IA",
+          "url": "https://impactotic.co/gobierno/comision-accidental-de-inteligencia-artificial-camara-colombia/"
+        }
+      ],
+      "etiquetas": [
+        "Congreso",
+        "comisión"
+      ],
+      "etapa": null,
+      "actualizacion": "489af80"
+    },
+    {
+      "id": "chile-aws-inaugura-region-infraestructura",
+      "fecha": "2026-11-20",
+      "pais": "cl",
+      "categoria": "infraestructura",
+      "titulo": "AWS inaugura su región de infraestructura en Chile con una inversión de 4.000 millones de dólares",
+      "resumen": "Amazon Web Services inauguró en Chile su tercera región de infraestructura en América Latina, con una inversión anunciada de 4.000 millones de dólares. Según la cobertura, los servicios de IA de la plataforma llegarían durante el primer año.\n\nSe trata de una inversión privada de una empresa extranjera.",
+      "fuentes": [
+        {
+          "nombre": "Prensa — Infobae: AWS inaugura su tercera región latinoamericana en Chile",
+          "url": "https://www.infobae.com/america/america-latina/2026/11/20/aws-inaugura-su-tercera-region-latinoamericana-en-chile-con-una-inversion-de-usd-4000-millones/"
+        }
+      ],
+      "etiquetas": [
+        "centros de datos",
+        "AWS"
+      ],
+      "etapa": null,
+      "actualizacion": "489af80"
+    },
+    {
+      "id": "republica-dominicana-estrategia-nacional-ia",
+      "fecha": "2023-10",
+      "pais": "do",
+      "categoria": "politica",
+      "titulo": "República Dominicana lanza su Estrategia Nacional de Inteligencia Artificial",
+      "resumen": "El presidente Luis Abinader, el Gabinete de Innovación y la OGTIC presentaron la Estrategia Nacional de Inteligencia Artificial (ENIA), pensada para automatizar servicios ciudadanos, personalizar la educación y crear aplicaciones que conecten a la sociedad con un Estado más eficiente.\n\nSe organiza en seis pilares: infraestructura, talento humano, gobernanza, el proyecto TAINA, redes regionales y financiamiento.",
+      "fuentes": [
+        {
+          "nombre": "Presidencia de la República Dominicana — Lanzamiento de la ENIA",
+          "url": "https://presidencia.gob.do/noticias/presidente-luis-abinader-encabeza-lanzamiento-de-estrategia-nacional-de-inteligencia"
+        }
+      ],
+      "etiquetas": [
+        "ENIA",
+        "OGTIC"
+      ],
+      "etapa": "estrategia",
+      "actualizacion": "489af80"
+    },
+    {
+      "id": "venezuela-primera-discusion-ley-inteligencia-artificial",
+      "fecha": "2024-11-19",
+      "pais": "ve",
+      "categoria": "regulacion",
+      "titulo": "La Asamblea Nacional de Venezuela aprueba en primera discusión su proyecto de ley de IA",
+      "resumen": "La Asamblea Nacional aprobó por unanimidad, en primera discusión, el proyecto de Ley de Inteligencia Artificial, de 57 artículos y cuatro capítulos, impulsado por la Comisión Permanente de Educación, Salud, Ciencia, Tecnología e Innovación.\n\nEl proyecto busca fortalecer las capacidades técnicas y científicas del país y promover un desarrollo responsable de la IA. Falta la segunda discusión para que sea ley; no encontramos registro de que se haya sancionado.",
+      "fuentes": [
+        {
+          "nombre": "Asamblea Nacional de Venezuela — AN aprueba en primera discusión el proyecto",
+          "url": "https://www.asambleanacional.gob.ve/noticias/an-aprueba-en-primera-discusion-proyecto-de-ley-de-inteligencia-artificial"
+        }
+      ],
+      "etiquetas": [
+        "congreso",
+        "primera discusión"
+      ],
+      "etapa": "proyecto",
+      "actualizacion": "489af80"
+    },
+    {
+      "id": "costa-rica-estrategia-nacional-ia-2024-2027",
+      "fecha": "2024-10-24",
+      "pais": "cr",
+      "categoria": "politica",
+      "titulo": "Costa Rica lanza su Estrategia Nacional de Inteligencia Artificial 2024–2027",
+      "resumen": "El MICITT presentó la Estrategia Nacional de Inteligencia Artificial (ENIA) 2024–2027. Según el ministerio, Costa Rica es el primer país de Centroamérica con una política pública orientada a guiar el uso, la adopción y el desarrollo de la IA.\n\nLa estrategia prioriza el despliegue de redes 5G y la creación de un Centro Nacional de Excelencia en IA. En su redacción participaron organizaciones, empresas y países, entre ellos la Unión Europea.",
+      "fuentes": [
+        {
+          "nombre": "MICITT — Presentó la Estrategia Nacional de Inteligencia Artificial",
+          "url": "https://micitt.go.cr/el-sector-informa/micitt-presento-estrategia-nacional-de-inteligencia-artificial-enia"
+        }
+      ],
+      "etiquetas": [
+        "ENIA",
+        "MICITT"
+      ],
+      "etapa": "estrategia",
+      "actualizacion": "489af80"
+    },
+    {
+      "id": "chile-camara-despacha-proyecto-ia-al-senado",
+      "fecha": "2025-10-13",
+      "pais": "cl",
+      "categoria": "regulacion",
+      "titulo": "La Cámara de Diputados de Chile aprueba el proyecto de ley de IA y lo envía al Senado",
+      "resumen": "La Sala de la Cámara de Diputadas y Diputados despachó al Senado el proyecto que regula los usos de los sistemas de inteligencia artificial. Busca un marco normativo para un desarrollo sostenible y ético de esta tecnología al servicio de las personas.\n\nEl Ministerio de Ciencia lo presentó como una regulación clara, integral y exigible, a diferencia de otros países que optaron por marcos no vinculantes o fragmentados.",
+      "fuentes": [
+        {
+          "nombre": "MinCiencia — Proyecto que regula usos de la IA avanza al Senado",
+          "url": "https://www.minciencia.gob.cl/noticias/proyecto-que-regula-usos-de-la-inteligencia-artificial-avanza-al-senado/"
+        }
+      ],
+      "etiquetas": [
+        "Cámara",
+        "congreso"
+      ],
+      "etapa": "proyecto",
+      "actualizacion": "489af80"
+    },
+    {
+      "id": "chile-politica-nacional-ia-decreto-12",
+      "fecha": "2025-01-28",
+      "pais": "cl",
+      "categoria": "politica",
+      "titulo": "Chile publica la actualización de su Política Nacional de Inteligencia Artificial",
+      "resumen": "El Decreto 12 del Ministerio de Ciencia, firmado el 11 de abril de 2024, se publicó en el Diario Oficial el 28 de enero de 2025. Actualiza la Política Nacional de IA y mantiene su horizonte de diez años, hasta 2031.\n\nLa política reafirma una visión de la tecnología al servicio de las personas, con principios de ética, inclusión y responsabilidad.",
+      "fuentes": [
+        {
+          "nombre": "Biblioteca del Congreso Nacional — Decreto 12 (28-ene-2025)",
+          "url": "https://www.bcn.cl/leychile/navegar?idNorma=1210664"
+        },
+        {
+          "nombre": "Prensa — TeleSemana: Chile introdujo cambios a su política de IA",
+          "url": "https://www.telesemana.com/blog/2025/02/06/regulacion-chile-introdujo-cambios-a-politica-nacional-de-inteligencia-artificial/"
+        }
+      ],
+      "etiquetas": [
+        "política nacional",
+        "decreto"
+      ],
+      "etapa": "estrategia",
+      "actualizacion": "489af80"
+    },
+    {
+      "id": "uruguay-decreto-276-2025-entornos-de-prueba-ia",
+      "fecha": "2025-12-02",
+      "pais": "uy",
+      "categoria": "regulacion",
+      "titulo": "Uruguay reglamenta los entornos de prueba (sandboxes) para proyectos de IA y datos",
+      "resumen": "El Decreto 276/025, promulgado el 2 de diciembre y publicado el 10 de diciembre de 2025, reglamenta los artículos 74 y 75 de la Ley 20.212. Crea un marco para que organizaciones prueben proyectos innovadores de datos e inteligencia artificial con flexibilidad regulatoria controlada.\n\nIncluye un comité técnico que evalúa los proyectos, excepciones regulatorias temporales de hasta dos años, evaluaciones de impacto en protección de datos y transparencia pública sobre las iniciativas.",
+      "fuentes": [
+        {
+          "nombre": "IMPO — Decreto N.° 276/025",
+          "url": "https://www.impo.com.uy/bases/decretos/276-2025"
+        }
+      ],
+      "etiquetas": [
+        "sandbox",
+        "AGESIC"
+      ],
+      "etapa": null,
+      "actualizacion": "489af80"
+    },
+    {
+      "id": "peru-estrategia-nacional-ia-2026-2030",
+      "fecha": "2026-05-01",
+      "pais": "pe",
+      "categoria": "politica",
+      "titulo": "Perú aprueba su Estrategia Nacional de Inteligencia Artificial 2026–2030",
+      "resumen": "La PCM aprobó la Estrategia Nacional de IA 2026–2030 mediante la Resolución Ministerial 152-2026-PCM, firmada el 29 de abril y publicada el 1 de mayo de 2026. Es un instrumento que ordena las intervenciones del Estado para desarrollar y fortalecer el gobierno y la gestión de la IA.\n\nEs de aplicación obligatoria para las entidades públicas y las empresas del Estado. Se organiza en cuatro ejes: talento y capacidades, innovación y emprendimiento, marco ético y regulatorio, y participación ciudadana. La conduce la Secretaría de Gobierno y Transformación Digital.",
+      "fuentes": [
+        {
+          "nombre": "PCM — Resolución Ministerial N.° 152-2026-PCM",
+          "url": "https://www.gob.pe/institucion/pcm/normas-legales/8081563-152-2026-pcm"
+        },
+        {
+          "nombre": "El Peruano — Perú fija reglas para la IA en el sector público hasta 2030",
+          "url": "https://www.elperuano.pe/noticia/294752-peru-fija-reglas-para-la-inteligencia-artificial-en-el-sector-publico-hasta-2030"
+        }
+      ],
+      "etiquetas": [
+        "ENIA",
+        "PCM"
+      ],
+      "etapa": "estrategia",
+      "actualizacion": "489af80"
+    },
+    {
+      "id": "panama-proyecto-588-gobernanza-adaptativa-ia",
+      "fecha": "2026-04-15",
+      "pais": "pa",
+      "categoria": "regulacion",
+      "titulo": "Panamá aprueba en primer debate el proyecto de ley de gobernanza adaptativa de la IA",
+      "resumen": "La comisión de Educación, Cultura y Deportes de la Asamblea Nacional aprobó en primer debate el proyecto de ley 588, que establece la gobernanza adaptativa de la inteligencia artificial. El texto, presentado por el diputado Jorge Bloise, unificó iniciativas de los diputados Manuel Cheng y Ernesto Cedeño.\n\nEl director de la Senacyt lo describió como una norma que posiciona a Panamá como hub de innovación, frente a países con regulaciones más rígidas.",
+      "fuentes": [
+        {
+          "nombre": "Asamblea Nacional de Panamá — Proyecto de ley aprobado en primer debate",
+          "url": "https://www.asamblea.gob.pa/Noticias/Noticias/PANAMA-A-LA-VANGUARDIA-DE-LA-TECNOLOGIA-CON-IA-SEGUN-PROYECTO-DE-LEY-APROBADO-EN-PRIMER-DEBATE"
+        }
+      ],
+      "etiquetas": [
+        "Asamblea",
+        "primer debate"
+      ],
+      "etapa": "proyecto",
+      "actualizacion": "489af80"
+    },
+    {
+      "id": "panama-estrategia-nacional-ia",
+      "fecha": "2026-08-12",
+      "pais": "pa",
+      "categoria": "politica",
+      "titulo": "Panamá aprueba su Estrategia Nacional de Inteligencia Artificial",
+      "resumen": "El Consejo de Gabinete aprobó, mediante la Resolución 89-26, la Estrategia Nacional de Inteligencia Artificial de Panamá, que establece objetivos, programas, acciones y prioridades para impulsar una innovación ética, responsable, inclusiva y segura. Se había presentado públicamente el 30 de julio de 2026, junto con una estrategia de semiconductores.\n\nSegún la cobertura del lanzamiento, tiene seis pilares y 53 acciones, con un horizonte de diez años.",
+      "fuentes": [
+        {
+          "nombre": "Senacyt — Gabinete aprueba la Estrategia Nacional de IA",
+          "url": "https://www.senacyt.gob.pa/en/gabinete-aprueba-la-estrategia-nacional-de-inteligencia-artificial/"
+        },
+        {
+          "nombre": "Prensa — Observatorio Panameño de IA: Panamá lanza su Estrategia Nacional de IA",
+          "url": "https://www.observatorioia.com.pa/2026/07/30/panama-lanza-su-estrategia-nacional-de-ia-y-su-estrategia-de-semiconductores-seis-pilares-53-acciones-y-una-apuesta-a-diez-anos/"
+        }
+      ],
+      "etiquetas": [
+        "Senacyt",
+        "Gabinete"
+      ],
+      "etapa": "estrategia",
+      "actualizacion": "489af80"
+    },
+    {
+      "id": "colombia-pl-025-2026-regula-inteligencia-artificial",
+      "fecha": "2026-07-21",
+      "pais": "co",
+      "categoria": "regulacion",
+      "titulo": "Congresistas radican en la Cámara de Colombia un nuevo proyecto de ley para regular la IA",
+      "resumen": "El Proyecto de Ley 025 de 2026 Cámara, «por medio de la cual se regula la inteligencia artificial en Colombia para garantizar su desarrollo ético y responsable», fue radicado el 21 de julio de 2026 por un grupo de congresistas, la mayoría del Pacto Histórico. Se tramita en la Comisión Sexta de la Cámara.\n\nMás tarde, la Cámara instaló una comisión accidental para unificar los proyectos de IA que hay en el Congreso.",
+      "fuentes": [
+        {
+          "nombre": "Cámara de Representantes — Proyecto de Ley 025 de 2026 Cámara",
+          "url": "https://www.camara.gov.co/inteligencia-artificial-2/"
+        }
+      ],
+      "etiquetas": [
+        "Cámara",
+        "riesgo"
+      ],
+      "etapa": "proyecto",
+      "actualizacion": "489af80"
+    },
+    {
+      "id": "ecuador-pleno-archiva-proyecto-ley-ia",
+      "fecha": "2026-09-15",
+      "pais": "ec",
+      "categoria": "regulacion",
+      "titulo": "El Pleno de la Asamblea de Ecuador archiva el proyecto de ley de IA",
+      "resumen": "El Pleno de la Asamblea Nacional aprobó, en primer debate y con 88 votos, archivar el Proyecto de Ley Orgánica de Regulación y Promoción de Inteligencia Artificial, siguiendo el informe de la Comisión de Educación, Cultura, Ciencia, Tecnología, Innovación y Saberes Ancestrales.\n\nLa presidenta de la comisión, Cecilia Baltazar, explicó que el proyecto no garantizaba adecuadamente la protección de derechos, podía limitar el desarrollo tecnológico y generaría gasto público sin observar las competencias constitucionales.",
+      "fuentes": [
+        {
+          "nombre": "Asamblea Nacional del Ecuador — Pleno archiva Proyecto de Ley de IA",
+          "url": "https://www.asambleanacional.gob.ec/es/noticia/119354-pleno-archiva-proyecto-de-ley-de-inteligencia"
+        }
+      ],
+      "etiquetas": [
+        "Asamblea",
+        "archivo"
+      ],
+      "etapa": null,
+      "actualizacion": "489af80"
+    },
+    {
+      "id": "chile-latam-gpt-cenia",
+      "fecha": "2026-02-10",
+      "pais": "cl",
+      "categoria": "investigacion",
+      "titulo": "Chile presenta Latam-GPT, el primer modelo de lenguaje abierto de América Latina",
+      "resumen": "El Centro Nacional de Inteligencia Artificial (CENIA) presentó Latam-GPT junto al presidente Gabriel Boric. Es un modelo de lenguaje abierto creado con datos latinoamericanos, construido de forma colaborativa por la academia, el sector público y el sector privado de la región.\n\nSegún CENIA, el proyecto busca que América Latina y el Caribe sean desarrolladores, y no solo usuarios, de tecnología de vanguardia.",
+      "fuentes": [
+        {
+          "nombre": "CENIA — Latam-GPT: la primera IA regional abierta",
+          "url": "https://cenia.cl/2026/02/10/latam-gpt-la-primera-ia-regional-abierta-creada-con-datos-latinoamericanos/"
+        }
+      ],
+      "etiquetas": [
+        "Latam-GPT",
+        "regional",
+        "CENIA"
+      ],
+      "etapa": "modelos",
+      "actualizacion": "489af80"
+    },
+    {
+      "id": "regional-declaracion-santo-domingo",
+      "fecha": "2026-06-26",
+      "pais": "regional",
+      "categoria": "politica",
+      "titulo": "Tercera cumbre regional sobre ética de la IA aprueba la Declaración de Santo Domingo",
+      "resumen": "La Tercera Cumbre Ministerial y de Altas Autoridades sobre la Ética de la IA en América Latina y el Caribe se celebró el 25 y 26 de junio de 2026 en Santo Domingo, organizada por la UNESCO, CAF y República Dominicana. Participaron ministros y altas autoridades de más de 20 países.\n\nSe aprobaron la Declaración de Santo Domingo y la Hoja de Ruta del Grupo de Trabajo Regional sobre IA 2026–2027.",
+      "fuentes": [
+        {
+          "nombre": "UNESCO — Tercera Cumbre Ministerial sobre Ética de la IA",
+          "url": "https://www.unesco.org/es/articles/tercera-cumbre-ministerial-y-de-altas-autoridades-sobre-etica-de-la-inteligencia-artificial-santo"
+        }
+      ],
+      "etiquetas": [
+        "UNESCO",
+        "cooperación"
+      ],
+      "etapa": null,
+      "actualizacion": "489af80"
+    },
+    {
+      "id": "brasil-santos-dumont-ampliacion-pbia",
+      "fecha": "2025-07",
+      "pais": "br",
+      "categoria": "infraestructura",
+      "titulo": "Brasil cuadruplica la capacidad del supercomputador Santos Dumont, primer paso del Plan Brasileño de IA",
+      "resumen": "El supercomputador Santos Dumont, del Laboratorio Nacional de Computación Científica (LNCC), recibió una ampliación que multiplicó por cuatro su capacidad de procesamiento, con recursos adicionales dedicados a la inteligencia artificial. La actualización la lidera Eviden, del grupo Atos, con apoyo de Petrobras.\n\nSe presentó como el primer paso del Plan Brasileño de IA, que prevé además un supercomputador específico para IA entre los cinco más potentes del mundo.",
+      "fuentes": [
+        {
+          "nombre": "LNCC — Atualização do Supercomputador Santos Dumont",
+          "url": "https://www.gov.br/lncc/pt-br/assuntos/noticias/ultimas-noticias-1/atualizacao-do-supercomputador-santos-dumont"
+        },
+        {
+          "nombre": "Prensa — Blog de NVIDIA Brasil: Santos Dumont recibe ampliación",
+          "url": "https://blog.nvidia.com.br/blog/santos-dumont-supercomputador-do-lncc-recebe-ampliacao-quatro-vezes-maior-como-primeiro-passo-do-plano-brasileiro-de-inteligencia-artificial/"
+        }
+      ],
+      "etiquetas": [
+        "supercomputador",
+        "PBIA",
+        "LNCC"
+      ],
+      "etapa": "computo",
+      "actualizacion": "489af80"
+    },
+    {
+      "id": "argentina-dictamen-diputados-marco-legal-ia",
+      "fecha": "2025-11",
+      "pais": "ar",
+      "categoria": "regulacion",
+      "titulo": "En Argentina, una comisión de Diputados da dictamen de mayoría a un marco legal de IA",
+      "resumen": "La Comisión de Ciencia, Tecnología e Innovación Productiva de la Cámara de Diputados, presidida por Daniel Gollán, dio dictamen de mayoría a un proyecto para regular la IA. El oficialismo (La Libertad Avanza) criticó la decisión y presentó un dictamen propio de rechazo.\n\nNo encontramos registro de que el proyecto haya llegado todavía al recinto.",
+      "fuentes": [
+        {
+          "nombre": "Prensa — El Destape: Con críticas del oficialismo, hubo dictamen en Diputados",
+          "url": "https://www.eldestapeweb.com/politica/diputados/con-criticas-del-oficialismo-hubo-dictamen-en-diputados-para-regular-la-inteligencia-artificial-2025111418020"
+        }
+      ],
+      "etiquetas": [
+        "Diputados",
+        "dictamen"
+      ],
+      "etapa": "proyecto",
+      "actualizacion": "489af80"
+    },
+    {
+      "id": "bolivia-senado-aprueba-proyecto-ley-ia",
+      "fecha": "2025-10-22",
+      "pais": "bo",
+      "categoria": "regulacion",
+      "titulo": "El Senado de Bolivia aprueba el proyecto de ley de promoción, gestión y uso de la IA",
+      "resumen": "La Cámara de Senadores aprobó el proyecto de Ley 178/2024-2025 C.S. y lo remitió a la Cámara de Diputados. El texto crea una autoridad de regulación de la IA, establece principios como transparencia, ética y no discriminación, e incluye un régimen de responsabilidad y sanciones.\n\nResultó de mesas técnicas realizadas entre abril y septiembre de 2025 con la AGETIC, universidades y la sociedad civil. No encontramos registro de que Diputados lo haya aprobado.",
+      "fuentes": [
+        {
+          "nombre": "Prensa — Opinión: Senado aprueba ley para regular el uso de la IA",
+          "url": "https://www.opinion.com.bo/articulo/pais/senado-aprueba-ley-regular-uso-inteligencia-artificial/20251023194756982336.html"
+        },
+        {
+          "nombre": "Prensa — La Patria: La Cámara de Senadores aprueba ley sobre IA",
+          "url": "https://lapatria.bo/2025/10/23/la-camara-de-senadores-aprueba-ley-sobre-inteligencia-artificial-en-bolivia/"
+        }
+      ],
+      "etiquetas": [
+        "Senado",
+        "AGETIC"
+      ],
+      "etapa": "proyecto",
+      "actualizacion": "489af80"
+    },
+    {
+      "id": "mexico-comision-senado-iniciativa-ley-ia",
+      "fecha": "2026-04-30",
+      "pais": "mx",
+      "categoria": "regulacion",
+      "titulo": "Una comisión del Senado de México impulsa una iniciativa de ley para regular la IA",
+      "resumen": "La Comisión de Ciencia y Tecnología del Senado impulsó una iniciativa que propone un nuevo marco para regular el uso de la IA, con protección de derechos humanos, privacidad y datos personales. Plantea crear el Consejo Mexicano de Ética para la IA y la Robótica, como organismo público descentralizado, y una Red Nacional de Estadística sobre IA, con el INEGI como generador principal de información.\n\nMéxico todavía no tiene una ley general de IA: hay varias iniciativas pendientes en el Congreso.",
+      "fuentes": [
+        {
+          "nombre": "Prensa — Infobae: Desde Comisión del Senado impulsan iniciativa de ley para regular la IA",
+          "url": "https://www.infobae.com/mexico/2026/04/30/desde-comision-del-senado-impulsan-iniciativa-de-ley-para-regular-el-uso-de-inteligencia-artificial-en-mexico/"
+        }
+      ],
+      "etiquetas": [
+        "Senado",
+        "iniciativa"
+      ],
+      "etapa": "proyecto",
+      "actualizacion": "489af80"
+    },
+    {
+      "id": "paraguay-proyecto-ley-ia-senado",
+      "fecha": "2025-05",
+      "pais": "py",
+      "categoria": "regulacion",
+      "titulo": "Ingresa al Senado de Paraguay un proyecto de ley para regular la IA",
+      "resumen": "El presidente del Congreso, Basilio «Bachi» Núñez, presentó al Senado el proyecto «que regula y promueve la creación, desarrollo, innovación e implementación de sistemas de inteligencia artificial». Clasifica los riesgos de la IA para permitir o prohibir su uso, con evaluaciones previas a la comercialización, derechos para los usuarios y supervisión humana de las decisiones automatizadas.\n\nEl texto se distribuyó a ocho comisiones asesoras.",
+      "fuentes": [
+        {
+          "nombre": "Prensa — Última Hora: Proyecto que regula la IA ya tuvo entrada en el Senado",
+          "url": "https://www.ultimahora.com/proyecto-que-regula-la-inteligencia-artificial-ya-tuvo-entrada-en-el-senado"
+        }
+      ],
+      "etiquetas": [
+        "Senado",
+        "riesgo"
+      ],
+      "etapa": "proyecto",
+      "actualizacion": "489af80"
     }
   ]
 }
